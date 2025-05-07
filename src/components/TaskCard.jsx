@@ -32,7 +32,7 @@ function TaskCard({ task, isDragging }) {
       exit={{ opacity: 0, y: -10 }}
       whileHover={{ y: -2, boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' }}
       className={`task-card ${isDragging ? 'task-card-dragging' : ''} ${
-        isCritical ? 'border-l-4 border-error-500' : ''
+        isCritical ? 'border-l-4 border-success-600' : ''
       }`}
     >
       <div className="flex justify-between items-start mb-2">
@@ -44,7 +44,7 @@ function TaskCard({ task, isDragging }) {
 
       <p className="text-sm text-neutral-600 mb-3 line-clamp-2">{task.description}</p>
       
-      <div className="flex items-center text-xs text-neutral-500 mb-3">
+      <div className="flex items-center text-xs text-neutral-500 mb-3 ">
         <FaCalendarAlt className="mr-1" />
         <span>
           {format(new Date(task.startDate), 'MMM d')} - {format(new Date(task.endDate), 'MMM d, yyyy')}
@@ -52,18 +52,18 @@ function TaskCard({ task, isDragging }) {
       </div>
       
       {isCritical && (
-        <div className="flex items-center text-xs text-error-600 mb-3">
+        <div className="flex items-center text-xs text-error-600 mb-3  border-l-4 border-success-600">
           <FaLink className="mr-1" />
           <span>Critical Path</span>
         </div>
       )}
       
-      <div className="space-y-2">
-        <div className="flex justify-between items-center text-xs">
+      <div className="space-y-2 ">
+        <div className="flex justify-between items-center text-xs ">
           <span className="text-neutral-600">Progress</span>
           <span className="font-medium">{task.progress}%</span>
         </div>
-        <div className="w-full h-1.5 bg-neutral-100 rounded-full overflow-hidden">
+        <div className="w-full h-1.5 bg-neutral-100 rounded-full overflow-hidden ">
           <div 
             className={`h-full rounded-full ${getProgressColor()}`} 
             style={{ width: `${task.progress}%` }}

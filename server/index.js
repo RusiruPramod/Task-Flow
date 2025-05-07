@@ -114,33 +114,6 @@ app.get('/api/tasks/:id', async (req, res) => {
 });
 
 // Create a new task
-// app.post('/api/tasks', async (req, res) => {
-//   try {
-//     const { title, description, status, priority, startDate, endDate, progress } = req.body;
-    
-//     const [result] = await db.execute(
-//       `INSERT INTO tasks (title, description, status, priority, start_date, end_date, progress)
-//        VALUES (?, ?, ?, ?, ?, ?, ?)`,
-//       [title, description, status, priority, startDate, endDate, progress]
-//     );
-    
-//     const newTask = {
-//       id: result.insertId,
-//       title,
-//       description,
-//       status,
-//       priority,
-//       startDate,
-//       endDate,
-//       progress
-//     };
-    
-//     res.status(201).json(newTask);
-//   } catch (err) {
-//     console.error('Error creating task:', err);
-//     res.status(500).json({ error: 'Failed to create task' });
-//   }
-// });
 app.post('/api/tasks', async (req, res) => {
   try {
     const { title, description, status, priority, startDate, endDate, progress } = req.body;
