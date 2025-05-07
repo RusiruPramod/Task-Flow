@@ -28,10 +28,10 @@ function TaskList({ title, status, tasks }) {
           <div
             ref={provided.innerRef}
             {...provided.droppableProps}
-            className={`flex-1 overflow-y-auto p-3 ${
+            className={`flex-1 overflow-y-auto p-3 custom-scrollbar ${
               snapshot.isDraggingOver ? 'bg-neutral-50' : ''
             }`}
-            style={{ minHeight: '150px' }}
+            style={{ maxHeight: '400px' }}
           >
             {tasks.length === 0 ? (
               <motion.div 
